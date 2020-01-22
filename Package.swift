@@ -5,11 +5,17 @@ import PackageDescription
 
 let package = Package(
     name: "AlamofireObjectMapper",
+    platforms: [
+        .iOS("10.0"),
+        .tvOS("10.0"),
+        .watchOS("3.0"),
+        .macOS("10.12")
+    ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "AlamofireObjectMapper",
-            targets: ["AlamofireObjectMapper"]),
+            targets: ["AlamofireObjectMapper"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -21,7 +27,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "AlamofireObjectMapper",
-            dependencies: []),
+            dependencies: ["Alamofire", "ObjectMapper"]),
         .testTarget(
             name: "AlamofireObjectMapperTests",
             dependencies: ["AlamofireObjectMapper"]),
